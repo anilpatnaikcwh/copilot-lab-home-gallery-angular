@@ -1,23 +1,188 @@
-/* You can add global styles to this file, and also import other style files */
 * {
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
+  background: #f7f7fa;
+  color: #25243a;
   font-family: 'Be Vietnam Pro', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button,
+a,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #aaa2ed;
+  outline-offset: 3px;
+}
+
 :root {
-  --primary-color: #605DC8;
-  --secondary-color: #8B89E6;
-  --accent-color: #e8e7fa;
-  --shadow-color: #E8E8E8;
+  --primary-color: #5548b8;
+  --primary-dark: #403592;
+  --secondary-color: #7369c9;
+  --accent-color: #f0effb;
+  --shadow-color: #e6e7ef;
+  --text-color: #25243a;
+  --muted-color: #707184;
+  --surface-color: #fff;
+  --page-width: 1240px;
+}
+
+.home-count-marker {
+  border: 0;
+  background: transparent;
+}
+
+.home-count-marker span {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 3px solid white;
+  border-radius: 50%;
+  background: var(--primary-color);
+  box-shadow: 0 3px 12px rgb(37 36 58 / 28%);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: transform 140ms ease, background 140ms ease;
+}
+
+.home-count-marker span:hover {
+  transform: scale(1.12);
+  background: var(--primary-dark);
+}
+
+.home-popup {
+  width: 160px;
+  max-width: min(160px, calc(100vw - 90px));
+}
+
+.leaflet-popup-content {
+  margin: 14px 18px;
+}
+
+.home-popup-heading {
+  display: block;
+  margin-bottom: 8px;
+  color: #25243a;
+  font-size: 0.85rem;
+}
+
+.home-popup-list {
+  display: grid;
+  max-height: 300px;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+  overflow-y: auto;
+  scrollbar-color: #e4e2eb transparent;
+  scrollbar-width: thin;
+  list-style: none;
+}
+
+.home-popup-list::-webkit-scrollbar {
+  width: 1px;
+}
+
+.home-popup-list::-webkit-scrollbar-thumb {
+  border-radius: 1px;
+  background: #e4e2eb;
+}
+
+.home-popup-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.home-popup-list li {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+}
+
+.home-popup-link {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 9px;
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.home-popup-photo {
+  width: 100%;
+  height: 100px;
+  flex: 0 0 auto;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #edf2f4;
+}
+
+.home-popup-link span {
+  min-width: 0;
+}
+
+.home-popup-availability {
+  padding-left: 2px;
+  color: var(--muted-color);
+  font-size: 0.68rem;
+  line-height: 1.4;
+}
+
+.home-popup-link:hover {
+  text-decoration: underline;
 }
 
 button.primary {
-  padding: 10px;
-  border: solid 1px var(--primary-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 13px 20px;
+  border: 1px solid var(--primary-color);
+  border-radius: 9px;
   background: var(--primary-color);
   color: white;
-  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 160ms ease, box-shadow 160ms ease;
+}
+
+button.primary:hover {
+  background: var(--primary-dark);
+  box-shadow: 0 5px 14px rgb(64 53 146 / 20%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
