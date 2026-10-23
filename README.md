@@ -33,6 +33,14 @@ In this project you will find:
 * a devcontainer that installs GitHub Copilot when the Codespace is created (If you want to use Codespaces)
 * an `labs` folder all the instructions for this workshop.
 
+## Deploy to GitHub Pages
+
+The GitHub Actions workflow in `.github/workflows/deploy-pages.yml` builds and deploys the app whenever changes are pushed to `main`. It also supports manual runs from the repository's **Actions** tab.
+
+To enable deployment, open the repository's **Settings → Pages** and set the build and deployment source to **GitHub Actions**. After the workflow succeeds, the site is available at `https://anilpatnaikcwh.github.io/copilot-lab-home-gallery-angular/`.
+
+The workflow builds with the repository subpath and publishes a `404.html` fallback so Angular routes continue working when a detail page is refreshed.
+
 ## FAQ 
 
 - **How do I get a GitHub Copilot license?**

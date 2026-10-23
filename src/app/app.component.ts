@@ -9,7 +9,7 @@ import {HousingService} from './housing.service';
     <main>
       <header class="site-header">
         <a class="brand-link" [routerLink]="['/']" aria-label="Home Gallery home">
-          <img class="brand-logo" src="/assets/logo.svg" alt="" />
+          <img class="brand-logo" src="assets/logo.svg" alt="" />
           <span class="brand-copy">
             <span class="brand-kicker">A PLACE TO BELONG</span>
             <span class="brand-tagline">Find your next home</span>
